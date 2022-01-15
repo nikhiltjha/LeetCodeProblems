@@ -6,13 +6,14 @@ public class Solution {
         
         for(int i =0; i<len; i++)
         {
-            if(!memoryDict.ContainsKey(target -nums[i]))
+            var complement =target -nums[i];
+            if(!memoryDict.ContainsKey(complement))
                {
                        memoryDict[nums[i]]=i;
                }
              else
                {
-                   return new int[]{memoryDict[target-nums[i]],i};
+                   return new int[]{memoryDict[complement],i};
                }
              
         }
