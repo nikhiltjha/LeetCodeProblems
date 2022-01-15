@@ -8,14 +8,9 @@ public class Solution {
         {
             var complement =target -nums[i];
             if(!memoryDict.ContainsKey(complement))
-               {
-                       memoryDict[nums[i]]=i;
-               }
-             else
-               {
-                   return new int[]{memoryDict[complement],i};
-               }
-             
+                memoryDict[nums[i]]=i;
+            else
+                return new int[]{memoryDict[complement],i};   
         }
         return null;
         
