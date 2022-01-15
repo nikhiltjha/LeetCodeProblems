@@ -14,8 +14,7 @@ public class Solution {
                {
                    if(stack.Count !=0 && stack.Pop() == bracketReverseMapperDict[c])
                        continue;
-                    return false;
-                       
+                    return false;       
                }
             
         }
