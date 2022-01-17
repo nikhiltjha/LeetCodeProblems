@@ -5,7 +5,7 @@ public class Solution {
         int j = n-1;
         int tail = m+n-1;
         
-        while(i>=0 || j >=0)
+        while(j >=0)
         {
             if(i >= 0 && j >= 0)
             {
@@ -26,13 +26,7 @@ public class Solution {
             }
             else
             {
-               if(i >=0)
-               {
-                   nums1[tail] = nums1[i];
-                   tail--;
-                   i--;
-               }
-               else
+               if(j >=0)
                 {
                   nums1[tail] = nums2[j];
                    j--;
