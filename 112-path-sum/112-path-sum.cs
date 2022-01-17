@@ -12,21 +12,35 @@
  * }
  */
 public class Solution {
-    //public static bool MatchedTargetSumFlag = false;
-    public bool HasPathSum(TreeNode root, int target) 
+
+    public bool HasPathSum(TreeNode root, int targetSum) 
     {
-        return recursive(root, target);
+        bool [] res = new bool[1];
+        res[0] = false;
+        if (root== null) return false;
+        int currSum =0;
+        findPathSumMatch(root,targetSum,currSum, res);
+        return res[0];
+        
     }
-    
-    public bool recursive(TreeNode root,int target)
+    public void findPathSumMatch(TreeNode node,int targetSum,int currSum, bool [] res)
     {    
-        if(root == null) return false;
-        if(root.left == null && root.right == null) {
-            return root.val == target;
-        } 
-        else {
-            int helpReq = target - root.val;
-            return recursive(root.left, helpReq) || recursive(root.right, helpReq);
+        currSum = currSum + node.val;
+        if(node.left == null && node.right ==null)
+        { 
+            if(targetSum == currSum)
+               res[0] = true;
+            return;
+                
+        }
+        if(node.left != null)
+        {
+            findPathSumMatch(node.left,targetSum,currSum, res);
+        }
+    
+        if(node.right != null)
+        {
+            findPathSumMatch(node.right,targetSum,currSum, res);
         }
     }
 }
