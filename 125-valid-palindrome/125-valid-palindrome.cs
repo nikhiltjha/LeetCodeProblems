@@ -6,6 +6,7 @@ public class Solution {
         //str = Regex.Replace(str,"[^a-z0-9]","");
         //without using regular expression and string methods
         var str = RemoveNonAlphaNumericCharacterAndConvertToLower(s);
+        Console.WriteLine(str);
         var len = str.Length;
         if(len ==0)
             return true;
@@ -24,7 +25,7 @@ public class Solution {
         {
             if((c>='A' && c<='Z'))
             {
-                sb.Append((char)((int)(c-'A'+'a')));
+                sb.Append((char)(c-'A'+'a'));
                 
             }
             if((c>='a' && c<='z') ||(c>='0' && c<='9'))
