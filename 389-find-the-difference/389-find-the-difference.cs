@@ -19,6 +19,7 @@ public class Solution {
         }
         return ' ';
         */
+        //using exor property
         var len1 = s.Length;
         if(len1==0) return t[0];
         int c = (int)s[0] ^ (int)t[0];
