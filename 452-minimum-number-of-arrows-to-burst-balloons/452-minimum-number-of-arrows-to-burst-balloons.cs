@@ -8,10 +8,7 @@ public class Solution {
         for(int i=1;i<sortedPoints.Length;i++)
         {
             //Console.WriteLine($"{sortedPoints[i][0]} {sortedPoints[i][1]}");
-            if(currHead >=sortedPoints[i][0])
-                continue;
-            else
-            {
+            if(currHead < sortedPoints[i][0]) {
                 count++;
                 currHead =sortedPoints[i][1];
             }
