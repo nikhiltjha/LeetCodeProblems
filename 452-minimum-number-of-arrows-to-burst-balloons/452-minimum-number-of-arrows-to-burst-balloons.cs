@@ -1,7 +1,6 @@
 public class Solution {
     public int FindMinArrowShots(int[][] points) 
     {
-        if (points.Length ==0) return 0;
         var sortedPoints = points.OrderBy(x=>x[1]).ToArray();
         int count = 1;
         int currHead = sortedPoints[0][1];
