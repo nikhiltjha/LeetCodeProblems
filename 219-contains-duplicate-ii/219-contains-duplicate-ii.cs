@@ -6,20 +6,18 @@ public class Solution {
         {
             if(dict.ContainsKey(n))
             {
-                var arr = dict[n];
-                foreach(var a in arr)
+                foreach(int a in dict[n])
                 {
                     if(Math.Abs(i-a)<=k)
                         return true;
                 }
-                arr.Add(i);
-                dict[n] = arr;
+               
+                dict[n].Add(i);
                 
             }
             else
-            {   var arr = new List<int>();
-                arr.Add(i);
-                dict[n]=arr;
+            {  
+                dict[n]=new List<int>(){i};
             }
             i++;
         }
